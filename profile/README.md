@@ -28,6 +28,7 @@
 
 | 资源 | 说明 |
 |---|---|
+| **[md2wechat-guide](https://github.com/md2wechat/md2wechat-guide)** | 完整使用教程 · 从安装到 API 接入的 7 篇分步指南 |
 | **[awesome-wechat-markdown](https://github.com/md2wechat/awesome-wechat-markdown)** | 公众号 × Markdown 生态最全工具精选列表 |
 | **[md2wechat-templates](https://github.com/md2wechat/md2wechat-templates)** | 开箱即用文章模板（含高级排版语法示例） |
 
