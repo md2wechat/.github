@@ -14,6 +14,14 @@
 
 ---
 
+## 🌐 立即体验
+
+**[→ 在线编辑器 md2wechat.cn](https://www.md2wechat.cn)** — 免费 Web 版，粘贴 Markdown 即可预览排版效果
+
+**[→ 博客 · 教程 · 接入指南](https://www.md2wechat.cn/blog)** — 覆盖 CLI、API、Obsidian、Agent 集成的完整文档
+
+---
+
 ## 🛠️ 工具矩阵
 
 | 工具 | 说明 | 亮点 |
@@ -28,6 +36,7 @@
 
 | 资源 | 说明 |
 |---|---|
+| **[md2wechat.cn/blog](https://www.md2wechat.cn/blog)** | 官方博客 · 20+ 篇教程、API 接入指南、主题说明 |
 | **[md2wechat-guide](https://github.com/md2wechat/md2wechat-guide)** | 完整使用教程 · 从安装到 API 接入的 7 篇分步指南 |
 | **[awesome-wechat-markdown](https://github.com/md2wechat/awesome-wechat-markdown)** | 公众号 × Markdown 生态最全工具精选列表 |
 | **[md2wechat-templates](https://github.com/md2wechat/md2wechat-templates)** | 开箱即用文章模板（含高级排版语法示例） |
