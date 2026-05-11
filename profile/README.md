@@ -26,7 +26,7 @@
 
 | 工具 | 说明 | 亮点 |
 |---|---|---|
-| **[md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill)** ⭐2.1k | CLI + Agent-native 全流程工具 | 40+主题 · AI配图 · MCP · 一键推草稿 |
+| **[md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill)** ⭐2.2k | CLI + Agent-native 全流程工具 | 48套主题 · AI配图 · MCP · 一键推草稿 |
 | **[obsidian-md2wechat](https://github.com/geekjourneyx/obsidian-md2wechat)** ⭐215 | Obsidian 原生插件 | 在 Obsidian 直接推送微信草稿 |
 | **[md2wechat-mcp-server](https://github.com/geekjourneyx/md2wechat-mcp-server)** ⭐46 | MCP Server | 在任意 AI 对话中发布公众号 |
 | **[feishu-md2wechat](https://github.com/geekjourneyx/feishu-md2wechat)** ⭐55 | 飞书文档一键发布 | 飞书 → 公众号，保留格式 |
