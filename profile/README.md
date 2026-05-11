@@ -26,10 +26,10 @@
 
 | 工具 | 说明 | 亮点 |
 |---|---|---|
-| **[md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill)** ⭐2.2k | CLI + Agent-native 全流程工具 | 48套主题 · AI配图 · MCP · 一键推草稿 |
-| **[obsidian-md2wechat](https://github.com/geekjourneyx/obsidian-md2wechat)** ⭐215 | Obsidian 原生插件 | 在 Obsidian 直接推送微信草稿 |
-| **[md2wechat-mcp-server](https://github.com/geekjourneyx/md2wechat-mcp-server)** ⭐46 | MCP Server | 在任意 AI 对话中发布公众号 |
-| **[feishu-md2wechat](https://github.com/geekjourneyx/feishu-md2wechat)** ⭐55 | 飞书文档一键发布 | 飞书 → 公众号，保留格式 |
+| **[md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill)** [![Stars](https://img.shields.io/github/stars/geekjourneyx/md2wechat-skill?style=flat&logo=github&color=FFD700)](https://github.com/geekjourneyx/md2wechat-skill) | CLI + Agent-native 全流程工具 | 48套主题 · AI配图 · MCP · 一键推草稿 |
+| **[obsidian-md2wechat](https://github.com/geekjourneyx/obsidian-md2wechat)** [![Stars](https://img.shields.io/github/stars/geekjourneyx/obsidian-md2wechat?style=flat&logo=github&color=7C3AED)](https://github.com/geekjourneyx/obsidian-md2wechat) | Obsidian 原生插件 | 在 Obsidian 直接推送微信草稿 |
+| **[md2wechat-mcp-server](https://github.com/geekjourneyx/md2wechat-mcp-server)** [![Stars](https://img.shields.io/github/stars/geekjourneyx/md2wechat-mcp-server?style=flat&logo=github&color=00B4D8)](https://github.com/geekjourneyx/md2wechat-mcp-server) | MCP Server | 在任意 AI 对话中发布公众号 |
+| **[feishu-md2wechat](https://github.com/geekjourneyx/feishu-md2wechat)** [![Stars](https://img.shields.io/github/stars/geekjourneyx/feishu-md2wechat?style=flat&logo=github)](https://github.com/geekjourneyx/feishu-md2wechat) | 飞书文档一键发布 | 飞书 → 公众号，保留格式 |
 | **[md2wechat-lite](https://github.com/geekjourneyx/md2wechat-lite)** | 轻量版 CLI | 快速上手，零配置体验 |
 
 ## 📚 社区资源
