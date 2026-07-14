@@ -2,69 +2,59 @@
 
 # md2wechat
 
-**Agent 公众号发布引擎**
+将 Markdown 转为微信公众号可用 HTML，并把检查、预览、图片和草稿操作接入 CLI 与 Agent 工作流。
 
-*给我草稿 / 选题，30 分钟内出一版可发布稿*
-
-[在线体验](https://www.md2wechat.cn) · [使用指南](https://github.com/md2wechat/md2wechat-guide) · [模板骨架](https://github.com/md2wechat/md2wechat-templates)
+[在线编辑器](https://www.md2wechat.cn) · [主项目](https://github.com/geekjourneyx/md2wechat-skill) · [使用指南](https://github.com/md2wechat/md2wechat-guide) · [生态目录](https://github.com/md2wechat/awesome-wechat-markdown)
 
 </div>
 
----
+## 从你的任务开始
 
-## md2wechat 是做什么的？
+| 任务 | 入口 |
+|---|---|
+| 在线编辑 Markdown，复制微信富文本 | [md2wechat.cn](https://www.md2wechat.cn) |
+| 安装 CLI，接入 Agent 或公众号草稿流程 | [md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill) |
+| 按步骤完成安装、检查、预览和转换 | [md2wechat-guide](https://github.com/md2wechat/md2wechat-guide) |
+| 查找微信 Markdown 编辑器、发布工具、Skill 和 MCP | [awesome-wechat-markdown](https://github.com/md2wechat/awesome-wechat-markdown) |
+| 核对术语、数据来源和复核状态 | [md2wechat-wiki](https://github.com/md2wechat/md2wechat-wiki) |
+| 查看稳定 API | [API 文档](https://www.md2wechat.cn/api-docs) |
 
-`md2wechat` 是给 Agent 和内容团队用的公众号发布引擎。
+## 工作范围
 
-你给它一份草稿、一个选题，或者一段初步想法，它会产出一版可审、可改、可发的稿子。
+md2wechat 面向以 Markdown 为内容源的公众号工作流：
 
-它负责四件事：
+- 检查文章结构和发布准备度
+- 选择主题与高级排版语法
+- 生成微信兼容 HTML 和本地预览
+- 规划或生成封面、信息图和正文图片
+- 在用户明确授权后创建公众号草稿
 
-- 帮你补齐文章结构
-- 帮你对齐作者语气
-- 帮你补上转化模块
-- 帮你把草稿推进到发布前状态
+具体命令、参数和能力以上游项目的当前发现结果为准：
 
-## 你买到的是最后一公里交付能力
+```bash
+md2wechat version --json
+md2wechat capabilities --json
+md2wechat skills read md2wechat --json
+```
 
-| 方式 | 能做到什么 | 做不到什么 |
-|---|---|---|
-| 自己手动写 | 最懂自己 | 慢，容易卡在结构和收尾 |
-| 免费排版工具 | 让文章更整齐 | 解决不了语气、结构、转化 |
-| **md2wechat** | **把草稿变成可发布稿** | **交付结构、语气和转化闭环** |
+## 项目地图
 
-## 用户第一次会看到什么
+| 项目 | 职责 |
+|---|---|
+| [geekjourneyx/md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill) | CLI 源码、Release 和 Agent 运行协议 |
+| [md2wechat/md2wechat-guide](https://github.com/md2wechat/md2wechat-guide) | 面向使用者的任务手册 |
+| [md2wechat/awesome-wechat-markdown](https://github.com/md2wechat/awesome-wechat-markdown) | 微信 Markdown 生态目录 |
+| [md2wechat/md2wechat-wiki](https://github.com/md2wechat/md2wechat-wiki) | 术语、证据来源和复核记录 |
+| [geekjourneyx/obsidian-md2wechat](https://github.com/geekjourneyx/obsidian-md2wechat) | Obsidian 集成 |
+| [geekjourneyx/md2wechat-mcp-server](https://github.com/geekjourneyx/md2wechat-mcp-server) | MCP 集成 |
 
-- 开头、转场、证据、结尾、CTA 一次补齐
-- 样式、表达、转化一起处理
-- 输出直接进入审稿和发布流程
+产品行为、正式版本和接口以上游源码、Release 与公开文档为准。Wiki 记录核验过程，不替代这些原始来源。
 
-## 工具矩阵
+## 反馈
 
-| 工具 | 作用 | 适合谁 |
-|---|---|---|
-| **[md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill)** | 主引擎 | 内容团队、独立作者、Agent 工作流 |
-| **[obsidian-md2wechat](https://github.com/geekjourneyx/obsidian-md2wechat)** | Obsidian 到可发布稿 | Obsidian 用户 |
-| **[md2wechat-mcp-server](https://github.com/geekjourneyx/md2wechat-mcp-server)** | Agent 调用发布能力 | MCP / Agent 用户 |
-| **[feishu-md2wechat](https://github.com/geekjourneyx/feishu-md2wechat)** | 飞书到发布链路 | 飞书团队 |
-| **[md2wechat-lite](https://github.com/geekjourneyx/md2wechat-lite)** | 轻量体验版 | 先试用的人 |
+- CLI、渲染、安装和发布问题：[主项目 Issues](https://github.com/geekjourneyx/md2wechat-skill/issues)
+- Guide 错误：[Guide Issues](https://github.com/md2wechat/md2wechat-guide/issues)
+- 生态项目新增或更正：[Awesome List Issues](https://github.com/md2wechat/awesome-wechat-markdown/issues)
+- 事实来源或口径问题：[Wiki Issues](https://github.com/md2wechat/md2wechat-wiki/issues)
 
-## 从这里开始
-
-- **[在线体验 md2wechat.cn](https://www.md2wechat.cn)**
-  先看“普通草稿 -> 可发布稿”的差别
-
-- **[md2wechat-guide](https://github.com/md2wechat/md2wechat-guide)**
-  看怎么在 30 分钟内把草稿变成可发布稿
-
-- **[md2wechat-templates](https://github.com/md2wechat/md2wechat-templates)**
-  看文章骨架和转化模块怎么组织
-
-- **[awesome-wechat-markdown](https://github.com/md2wechat/awesome-wechat-markdown)**
-  看编辑器、同步工具、发布引擎各做什么
-
----
-
-<div align="center">
-<sub>md2wechat 关注的是交付一版可发布稿。</sub>
-</div>
+提交问题前请删除 AppID、AppSecret、API Key、Cookie 和未公开文章内容。
