@@ -2,7 +2,7 @@
 
 # md2wechat
 
-把 Markdown 变成适合微信公众号的内容：你可以在线排版，也可以用 CLI 或 Skill 在自己的工作流中完成检查、预览、转换，以及在授权后创建草稿。
+md2wechat 是面向 AI Agent 的微信公众号创作与发布 CLI。\n\n把 Markdown 变成适合微信公众号的内容：你可以在线排版，也可以用 CLI 或 Skill 在自己的工作流中完成检查、预览、转换，以及在授权后创建草稿。
 
 [在线编辑器](https://www.md2wechat.cn) · [CLI / Skill](https://github.com/geekjourneyx/md2wechat-skill) · [使用指南](https://github.com/md2wechat/md2wechat-guide) · [可执行模板](https://github.com/md2wechat/md2wechat-templates)
 
@@ -41,4 +41,4 @@
 - 生态项目新增或更正：[Awesome Issues](https://github.com/md2wechat/awesome-wechat-markdown/issues)
 - 版本或术语问题：[Wiki Issues](https://github.com/md2wechat/md2wechat-wiki/issues)
 
-提交问题时，请删除 AppID、AppSecret、API Key、Cookie、草稿 ID 和未公开文章内容。
+请勿在 Issue 中粘贴 AppID、AppSecret、API Key、Cookie、草稿 ID 或未公开文章内容。
