@@ -2,7 +2,9 @@
 
 # md2wechat
 
-md2wechat 是面向 AI Agent 的微信公众号创作与发布 CLI。\n\n把 Markdown 变成适合微信公众号的内容：你可以在线排版，也可以用 CLI 或 Skill 在自己的工作流中完成检查、预览、转换，以及在授权后创建草稿。
+md2wechat 是面向 AI Agent 的微信公众号创作与发布 CLI。
+
+把 Markdown 变成适合微信公众号的内容：你可以在线排版，也可以用 CLI 或 Skill 在自己的工作流中完成检查、预览、转换，以及在授权后创建草稿。
 
 [在线编辑器](https://www.md2wechat.cn) · [CLI / Skill](https://github.com/geekjourneyx/md2wechat-skill) · [使用指南](https://github.com/md2wechat/md2wechat-guide) · [可执行模板](https://github.com/md2wechat/md2wechat-templates)
 
