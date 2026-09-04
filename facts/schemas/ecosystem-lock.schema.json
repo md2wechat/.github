@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/md2wechat/.github/raw/main/facts/schemas/ecosystem-lock.schema.json",
+  "title": "md2wechat downstream ecosystem facts lock",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "reviewedAt", "sources"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "reviewedAt": { "type": "string", "format": "date" },
+    "sources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["runtime", "products", "platforms"],
+      "properties": {
+        "runtime": { "$ref": "#/$defs/source" },
+        "products": { "$ref": "#/$defs/source" },
+        "platforms": { "$ref": "#/$defs/source" }
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "path", "sha", "schemaVersion"],
+      "properties": {
+        "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
+        "path": { "type": "string", "minLength": 1 },
+        "sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "schemaVersion": { "type": ["integer", "string"] }
+      }
+    }
+  }
+}

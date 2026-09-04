@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/md2wechat/.github/raw/main/facts/schemas/product-routes.schema.json",
+  "title": "md2wechat product and route authority",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "reviewedAt",
+    "brand",
+    "products",
+    "ecosystem",
+    "intents",
+    "forbiddenPaths"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "reviewedAt": { "type": "string", "format": "date" },
+    "brand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "category", "coreDefinition"],
+      "properties": {
+        "name": { "const": "md2wechat" },
+        "category": { "type": "string", "minLength": 1 },
+        "coreDefinition": { "type": "string", "minLength": 1 }
+      }
+    },
+    "products": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cli", "skill", "convertApi", "publishingApi", "onlineEditor"],
+      "properties": {
+        "cli": { "$ref": "#/$defs/product" },
+        "skill": { "$ref": "#/$defs/product" },
+        "convertApi": {
+          "$ref": "#/$defs/product",
+          "required": ["endpoint"],
+          "properties": {
+            "endpoint": { "const": "https://www.md2wechat.cn/api/convert" },
+            "createsDraft": { "const": false }
+          }
+        },
+        "publishingApi": {
+          "$ref": "#/$defs/product",
+          "required": ["endpoint"],
+          "properties": {
+            "endpoint": { "const": "https://md2wechat.com/api/v1" },
+            "createsDraft": { "const": true }
+          }
+        },
+        "onlineEditor": { "$ref": "#/$defs/product" }
+      }
+    },
+    "ecosystem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["guide", "wiki", "awesome", "templates"],
+      "properties": {
+        "guide": { "$ref": "#/$defs/httpsUrl" },
+        "wiki": { "$ref": "#/$defs/httpsUrl" },
+        "awesome": { "$ref": "#/$defs/httpsUrl" },
+        "templates": { "$ref": "#/$defs/httpsUrl" }
+      }
+    },
+    "intents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["intent", "path"],
+        "properties": {
+          "intent": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "path": { "type": "string", "pattern": "^/" }
+        }
+      }
+    },
+    "forbiddenPaths": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^/" }
+    }
+  },
+  "$defs": {
+    "httpsUrl": { "type": "string", "format": "uri", "pattern": "^https://" },
+    "product": {
+      "type": "object",
+      "required": ["role", "entry", "createsDraft"],
+      "properties": {
+        "role": { "enum": ["core-product", "service", "interactive-client"] },
+        "entry": { "$ref": "#/$defs/httpsUrl" },
+        "endpoint": { "$ref": "#/$defs/httpsUrl" },
+        "createsDraft": { "type": "boolean" }
+      }
+    }
+  }
+}

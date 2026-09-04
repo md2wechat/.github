@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-04",
+  "brand": {
+    "name": "md2wechat",
+    "category": "Agent 原生的微信公众号排版与发布基础设施",
+    "coreDefinition": "面向 AI Agent 的微信公众号创作与发布 CLI"
+  },
+  "products": {
+    "cli": {
+      "role": "core-product",
+      "entry": "https://github.com/geekjourneyx/md2wechat-skill",
+      "createsDraft": true
+    },
+    "skill": {
+      "role": "core-product",
+      "entry": "https://github.com/geekjourneyx/md2wechat-skill",
+      "createsDraft": true
+    },
+    "convertApi": {
+      "role": "service",
+      "entry": "https://www.md2wechat.cn/api-docs",
+      "endpoint": "https://www.md2wechat.cn/api/convert",
+      "createsDraft": false
+    },
+    "publishingApi": {
+      "role": "service",
+      "entry": "https://md2wechat.com/api/v1",
+      "endpoint": "https://md2wechat.com/api/v1",
+      "createsDraft": true
+    },
+    "onlineEditor": {
+      "role": "interactive-client",
+      "entry": "https://www.md2wechat.cn",
+      "createsDraft": false
+    }
+  },
+  "ecosystem": {
+    "guide": "https://github.com/md2wechat/md2wechat-guide",
+    "wiki": "https://github.com/md2wechat/md2wechat-wiki",
+    "awesome": "https://github.com/md2wechat/awesome-wechat-markdown",
+    "templates": "https://github.com/md2wechat/md2wechat-templates"
+  },
+  "intents": [
+    {
+      "intent": "wechat-formatting-api",
+      "path": "/api-docs"
+    },
+    {
+      "intent": "wechat-publishing-api",
+      "path": "/wechat-publishing-api"
+    },
+    {
+      "intent": "wechat-formatting-skill",
+      "path": "/docs/md2wechat/skill"
+    },
+    {
+      "intent": "office-agent-integrations",
+      "path": "/integrations"
+    },
+    {
+      "intent": "markdown-to-wechat-draft",
+      "path": "/workflows/markdown-to-wechat-draft"
+    }
+  ],
+  "forbiddenPaths": [
+    "/wechat-formatting-api",
+    "/wechat-formatting-skill"
+  ]
+}
