@@ -64,6 +64,11 @@ test("public profile uses reader-facing language", () => {
   }
 })
 
+test("public profile uses real Markdown line breaks", () => {
+  const profile = readFileSync(new URL("profile/README.md", root), "utf8")
+  assert.equal(profile.includes("\\n"), false, "profile must not contain literal escaped line breaks")
+})
+
 test("profile guard distinguishes negative Convert API draft wording from claims", () => {
   const facts = readJson("facts/product-routes.json")
   for (const profile of [
