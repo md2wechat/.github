@@ -42,6 +42,26 @@ test("the validator accepts the repository contracts and rendered profile", () =
   assert.equal(result.status, 0, result.stderr || result.stdout)
 })
 
+
+test("public profile uses reader-facing language", () => {
+  const profile = readFileSync(new URL("profile/README.md", root), "utf8")
+  const internalTerms = [
+    "最短可验证路径",
+    "产品关系",
+    "平台兼容性",
+    "smoke",
+    "publiclySupported",
+    "Discovery 输出",
+    "失效条件",
+    "核验基线",
+    "状态注册表",
+    "副作用",
+  ]
+  for (const term of internalTerms) {
+    assert.equal(profile.includes(term), false, `profile must not contain internal term: ${term}`)
+  }
+})
+
 test("the validator reports immutable source SHA drift", () => {
   const fixture = JSON.stringify({
     schemaVersion: 1,
