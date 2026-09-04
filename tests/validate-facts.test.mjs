@@ -42,6 +42,50 @@ test("the validator accepts the repository contracts and rendered profile", () =
   assert.equal(result.status, 0, result.stderr || result.stdout)
 })
 
+
+test("public profile uses reader-facing language", () => {
+  const profile = readFileSync(new URL("profile/README.md", root), "utf8")
+  const internalTerms = [
+    "最短可验证路径",
+    "产品关系",
+    "平台兼容性",
+    "smoke",
+    "publiclySupported",
+    "Discovery 输出",
+    "失效条件",
+    "核验基线",
+    "状态注册表",
+    "副作用",
+    "未经复核的支持关系",
+    "状态与证据",
+  ]
+  for (const term of internalTerms) {
+    assert.equal(profile.includes(term), false, `profile must not contain internal term: ${term}`)
+  }
+})
+
+test("public profile uses real Markdown line breaks", () => {
+  const profile = readFileSync(new URL("profile/README.md", root), "utf8")
+  assert.equal(profile.includes("\\n"), false, "profile must not contain literal escaped line breaks")
+})
+
+test("profile guard distinguishes negative Convert API draft wording from claims", () => {
+  const facts = readJson("facts/product-routes.json")
+  for (const profile of [
+    "Convert API 不创建草稿",
+    "Convert API 只转换内容，不会生成草稿",
+  ]) {
+    assert.doesNotMatch(
+      validator.validateProfile(profile, facts).join("\n"),
+      /profile confuses Convert API with draft creation/,
+    )
+  }
+  assert.match(
+    validator.validateProfile("Convert API 可以创建草稿", facts).join("\n"),
+    /profile confuses Convert API with draft creation/,
+  )
+})
+
 test("the validator reports immutable source SHA drift", () => {
   const fixture = JSON.stringify({
     schemaVersion: 1,

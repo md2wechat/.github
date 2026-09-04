@@ -182,8 +182,16 @@ export function validateProfile(profile, facts) {
   if (claim.test(profile)) {
     errors.push("profile contains an evidence-gated platform support claim")
   }
-  if (/Convert API.{0,16}(?:创建|生成).{0,8}草稿/s.test(profile)) {
-    errors.push("profile confuses Convert API with draft creation")
+  const convertDraftClaims = profile.match(/Convert API[^。！？\n]*/g) ?? []
+  for (const sentence of convertDraftClaims) {
+    const withoutNegativeClaims = sentence.replaceAll(
+      /(?:不|不会|不能|不提供|未)(?:创建|生成)[^。！？\n]{0,8}草稿/g,
+      "",
+    )
+    if (/(?:创建|生成)[^。！？\n]{0,8}草稿/.test(withoutNegativeClaims)) {
+      errors.push("profile confuses Convert API with draft creation")
+      break
+    }
   }
   return errors
 }
