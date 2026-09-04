@@ -72,12 +72,12 @@ test("profile guard distinguishes negative Convert API draft wording from claims
   ]) {
     assert.doesNotMatch(
       validator.validateProfile(profile, facts).join("\n"),
-      /Convert API must not claim draft creation/,
+      /profile confuses Convert API with draft creation/,
     )
   }
   assert.match(
     validator.validateProfile("Convert API 可以创建草稿", facts).join("\n"),
-    /Convert API must not claim draft creation/,
+    /profile confuses Convert API with draft creation/,
   )
 })
 
