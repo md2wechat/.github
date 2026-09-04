@@ -31,12 +31,25 @@
       "additionalProperties": false,
       "required": ["cli", "skill", "convertApi", "publishingApi", "onlineEditor"],
       "properties": {
-        "cli": { "$ref": "#/$defs/product" },
-        "skill": { "$ref": "#/$defs/product" },
+        "cli": {
+          "$ref": "#/$defs/product",
+          "properties": {
+            "role": { "const": "core-product" },
+            "createsDraft": { "const": true }
+          }
+        },
+        "skill": {
+          "$ref": "#/$defs/product",
+          "properties": {
+            "role": { "const": "core-product" },
+            "createsDraft": { "const": true }
+          }
+        },
         "convertApi": {
           "$ref": "#/$defs/product",
           "required": ["endpoint"],
           "properties": {
+            "role": { "const": "service" },
             "endpoint": { "const": "https://www.md2wechat.cn/api/convert" },
             "createsDraft": { "const": false }
           }
@@ -45,11 +58,18 @@
           "$ref": "#/$defs/product",
           "required": ["endpoint"],
           "properties": {
+            "role": { "const": "service" },
             "endpoint": { "const": "https://md2wechat.com/api/v1" },
             "createsDraft": { "const": true }
           }
         },
-        "onlineEditor": { "$ref": "#/$defs/product" }
+        "onlineEditor": {
+          "$ref": "#/$defs/product",
+          "properties": {
+            "role": { "const": "interactive-client" },
+            "createsDraft": { "const": false }
+          }
+        }
       }
     },
     "ecosystem": {
@@ -86,6 +106,7 @@
     "httpsUrl": { "type": "string", "format": "uri", "pattern": "^https://" },
     "product": {
       "type": "object",
+      "additionalProperties": false,
       "required": ["role", "entry", "createsDraft"],
       "properties": {
         "role": { "enum": ["core-product", "service", "interactive-client"] },

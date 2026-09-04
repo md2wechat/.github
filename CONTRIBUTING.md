@@ -14,7 +14,7 @@
 
 - 运行时能力来自 `geekjourneyx/md2wechat-skill` 的 Release、精确 tag 和 JSON Discovery。
 - 产品角色与 URL 来自 [`facts/product-routes.json`](facts/product-routes.json)。
-- 平台兼容状态来自 Wiki 的 `evidence/agent-platforms.json`，不能根据安装格式或搜索摘要自行升级状态。
+- 平台兼容状态将在 Wiki 的 `evidence/agent-platforms.json` 合并后受其约束；在此之前，不能根据安装格式或搜索摘要自行宣布支持。
 
 消费这些事实的仓库必须保存 `.md2wechat/ecosystem-facts.lock.json`，锁定三个来源的 40 位 commit SHA。更新 lock 时，在 PR 中列出旧 SHA、新 SHA、上游链接和受影响的公开声明。自动化只能更新明确标记的机器事实块，不能自动重写解释性正文或合并 PR。
 
