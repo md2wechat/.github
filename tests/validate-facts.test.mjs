@@ -56,10 +56,29 @@ test("public profile uses reader-facing language", () => {
     "核验基线",
     "状态注册表",
     "副作用",
+    "未经复核的支持关系",
+    "状态与证据",
   ]
   for (const term of internalTerms) {
     assert.equal(profile.includes(term), false, `profile must not contain internal term: ${term}`)
   }
+})
+
+test("profile guard distinguishes negative Convert API draft wording from claims", () => {
+  const facts = readJson("facts/product-routes.json")
+  for (const profile of [
+    "Convert API 不创建草稿",
+    "Convert API 只转换内容，不会生成草稿",
+  ]) {
+    assert.doesNotMatch(
+      validator.validateProfile(profile, facts).join("\n"),
+      /Convert API must not claim draft creation/,
+    )
+  }
+  assert.match(
+    validator.validateProfile("Convert API 可以创建草稿", facts).join("\n"),
+    /Convert API must not claim draft creation/,
+  )
 })
 
 test("the validator reports immutable source SHA drift", () => {
