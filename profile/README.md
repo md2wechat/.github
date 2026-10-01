@@ -18,8 +18,8 @@ md2wechat 是面向 AI Agent 的微信公众号创作与发布 CLI。
 | 在本地工作流中处理公众号内容 | [md2wechat CLI / Skill](https://github.com/geekjourneyx/md2wechat-skill) |
 | 将 Markdown 转为微信兼容 HTML | [Convert API](https://www.md2wechat.cn/api-docs)：只转换 HTML，不创建草稿 |
 | 上传素材并创建公众号草稿 | [Publishing API](https://md2wechat.com/api/v1)：创建草稿不等于群发 |
-| 根据产品资料准备介绍或百科式文章 | [定向写作指引](https://github.com/geekjourneyx/md2wechat-skill/blob/v3.7.0/docs/WRITING.md)：由 Agent 阅读指引后撰稿 |
-| 保存到知乎、CSDN、头条或腾讯云开发者社区草稿 | [多平台草稿说明](https://github.com/geekjourneyx/md2wechat-skill/blob/v3.7.0/docs/SYNC.md)：在已登录账号中保存并重新打开核对 |
+| 根据产品资料准备介绍或百科式文章 | [定向写作指引](https://github.com/geekjourneyx/md2wechat-skill/blob/v3.8.0/docs/WRITING.md)：由 Agent 阅读指引后撰稿 |
+| 保存到知乎、CSDN、头条或腾讯云开发者社区草稿 | [多平台草稿说明](https://github.com/geekjourneyx/md2wechat-skill/blob/v3.8.0/docs/SYNC.md)：在已登录账号中保存并重新打开核对 |
 
 ## 第一次使用
 
@@ -28,6 +28,8 @@ md2wechat 是面向 AI Agent 的微信公众号创作与发布 CLI。
 想把流程放进本地项目或日常写作工具，请从 [CLI / Skill](https://github.com/geekjourneyx/md2wechat-skill) 开始，再按 [Guide](https://github.com/md2wechat/md2wechat-guide) 的步骤安装和使用。
 
 ## 最近更新
+
+[v3.8.0（2026-09-24）](https://github.com/geekjourneyx/md2wechat-skill/releases/tag/v3.8.0)扩展了高级排版：新增 `cover-reveal`、`expand`、3 种刊头变体和 12 个品牌符号。当前共有 48 个 API 主题、83 个推荐场景、59 个推荐语法名和 65 项渲染能力。当前仍为静态输出，微信内点击交互尚未验证；需要交互语义时，应同时提供静态可读内容。
 
 [v3.7.0（2026-09-23）](https://github.com/geekjourneyx/md2wechat-skill/releases/tag/v3.7.0)增加了产品介绍和百科式文章的写作指引，以及腾讯云开发者社区未发布草稿流程。写作由 Agent 读取内置指引完成，无需新的写作命令；指定搜索产品不保证收录或引用，百科词条只准备草稿。腾讯云目前验证了短结构正文与单图的保存重开，长文、多图和草稿列表恢复仍待验证。
 

@@ -69,6 +69,16 @@ test("public profile uses real Markdown line breaks", () => {
   assert.equal(profile.includes("\\n"), false, "profile must not contain literal escaped line breaks")
 })
 
+test("public profile presents the current v3.8 layout facts", () => {
+  const profile = readFileSync(new URL("profile/README.md", root), "utf8")
+  assert.match(profile, /v3\.8\.0/)
+  for (const fact of ["48 个 API 主题", "83 个推荐场景", "59 个推荐语法", "65 项渲染能力"]) {
+    assert.match(profile, new RegExp(fact))
+  }
+  assert.match(profile, /静态输出/)
+  assert.match(profile, /微信[^。\n]*交互[^。\n]*尚未验证/)
+})
+
 test("profile guard distinguishes negative Convert API draft wording from claims", () => {
   const facts = readJson("facts/product-routes.json")
   for (const profile of [
